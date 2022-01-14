@@ -1,4 +1,4 @@
-from mencoba import TextMining as tm
+from mencoba import TextMining as tm 
 import time
 from mencoba import openewfile as of
 from tqdm import tqdm
