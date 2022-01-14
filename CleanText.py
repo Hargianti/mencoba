@@ -1,13 +1,13 @@
-from NLP_Models import TextMining as tm
+from mencoba import TextMining as tm
 import time
-from NLP_Models import openewfile as of
+from mencoba import openewfile as of
 from tqdm import tqdm
 #import swifter
 
 
 def cleanningtext(data, both = True, onlyclean = False, sentiment = False):
     print('Cleaning Text')
-    fSlang = of.openfile(path = './NLP_Models/slangword')
+    fSlang = of.openfile(path = './mencoba/slangword')
     bahasa = 'id'
     stops, lemmatizer = tm.LoadStopWords(bahasa, sentiment = sentiment)
     sw=open(fSlang,encoding='utf-8', errors ='ignore', mode='r');SlangS=sw.readlines();sw.close()
