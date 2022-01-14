@@ -20,7 +20,7 @@ from sklearn.decomposition import LatentDirichletAllocation as LDA
 import matplotlib.pyplot as plt
 import numpy as np
 from textblob import TextBlob 
-from NLP_Models import openewfile as of
+from mencoba import openewfile as of
 
 def crawlFiles(dPath, types = None):
     #dPath = 'C:/Temp', types ='pdf'
@@ -30,8 +30,7 @@ def crawlFiles(dPath, types = None):
         return [dPath+'/'+f for f in os.listdir(dPath)]
 
 def readBz2(file):
-    with bz2(file, "r") as bzData:
-        txt = []
+    with bz2(file, "r") as bzDatmencoba txt = []
         for line in bzData:
             try:
                 txt.append(line.strip().decode('utf-8','replace'))
@@ -84,20 +83,20 @@ def LoadStopWords(lang, sentiment = True):
     if sentiment:
         if L == 'en' or L == 'english' or L == 'inggris':
             lemmatizer = WordNetLemmatizer()
-            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './NLP_Models/stopword'))[0]])
+            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './mencoba/stopword'))[0]])
         elif L == 'id' or L == 'indonesia' or L == 'indonesian':
             lemmatizer = Indonesian()
-            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './NLP_Models/stopword_noise'))[0]])
+            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './mencoba/stopword_noise'))[0]])
         else:
             print('Warning! Languange not recognized. Empty stopword given')
             stops = set(); lemmatizer = None
     else:
         if L == 'en' or L == 'english' or L == 'inggris':
             lemmatizer = WordNetLemmatizer()
-            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './NLP_Models/stopword_en'))[0]])
+            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './mencoba/stopword_en'))[0]])
         elif L == 'id' or L == 'indonesia' or L == 'indonesian':
             lemmatizer = Indonesian()
-            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './NLP_Models/stopword'))[0]])
+            stops = set([t.strip() for t in LoadDocuments(file = of.openfile(path = './mencoba/stopword'))[0]])
         else:
             print('Warning! Languange not recognized. Empty stopword given')
             stops = set(); lemmatizer = None
