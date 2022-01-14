@@ -30,7 +30,8 @@ def crawlFiles(dPath, types = None):
         return [dPath+'/'+f for f in os.listdir(dPath)]
 
 def readBz2(file):
-    with bz2(file, "r") as bzDatmencoba txt = []
+    with bz2(file, "r") as bzData:
+        txt = []
         for line in bzData:
             try:
                 txt.append(line.strip().decode('utf-8','replace'))
